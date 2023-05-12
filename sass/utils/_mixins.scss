@@ -1,0 +1,27 @@
+@mixin generateIcons($icons) {
+  @each $iconName in $icons {
+    .icon-#{$iconName}::before {
+      background-image: url(../images/svg/#{$iconName}.svg);
+    }
+  }
+}
+
+// images/svg/icons.svg#icon-
+
+@mixin mobile {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

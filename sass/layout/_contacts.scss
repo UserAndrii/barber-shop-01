@@ -1,0 +1,275 @@
+.contacts-wrap {
+  background-color: #191c26;
+  background-image: url(../images/contacts_bg.png);
+  background-size: 767px 496px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  max-width: 1280px;
+  margin: 0 auto;
+  @include tablet {
+    background-size: 1199px 449px;
+  }
+  @include desktop {
+    background-position: right;
+    background-size: calc(50% - 40px) 100%;
+  }
+}
+
+.contacts-wrap__container {
+  @include desktop {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.online {
+  overflow: hidden;
+  text-align: center;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  @include tablet {
+    text-align: start;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  @include desktop {
+    padding-top: 130px;
+    padding-bottom: 130px;
+    width: calc(50% + 15px);
+  }
+}
+
+.online__title {
+  color: var(--main-title-color);
+
+  font-family: "Raleway";
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+
+  margin-bottom: 44px;
+}
+
+.online__form {
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.input-field {
+  margin-bottom: 44px;
+  position: relative;
+
+  @include tablet {
+    &:first-child {
+      margin-right: 30px;
+    }
+    width: 330px;
+  }
+  @include desktop {
+    width: 265px;
+  }
+}
+
+.online__input {
+  width: 100%;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--label-color);
+  outline: none;
+  color: rgba(190, 193, 202, 0.8);
+  transition: border-color 250ms linear;
+
+  &:hover,
+  &:focus {
+    border-color: #ffffff;
+  }
+}
+
+.online__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  color: var(--label-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  transition: color 250ms linear, transform 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: var(--main-title-color);
+  }
+}
+
+.online__input:hover + .online__label,
+.online__input:focus + .online__label,
+.online__input:placeholder-shown + .online__label {
+  color: #ffffff;
+  transform: translateY(-100%);
+}
+
+.online__input:not(:placeholder-shown) + .online__label {
+  transform: translateY(-100%);
+}
+
+.text-field {
+  position: relative;
+  margin-top: 44px;
+  margin-bottom: 44px;
+}
+
+.online__mess {
+  resize: none;
+  background-color: transparent;
+  color: rgba(190, 193, 202, 0.8);
+  width: 418px;
+  height: 76px;
+  border: none;
+  border-bottom: 1px solid var(--label-color);
+  outline: none;
+  transition: border-color 250ms linear;
+
+  &:hover,
+  &:focus {
+    border-color: #ffffff;
+  }
+
+  @include tablet {
+    width: 690px;
+  }
+  @include desktop {
+    width: 560px;
+  }
+}
+
+.online__mess:hover + .online__label,
+.online__mess:focus + .online__label,
+.online__mess:placeholder-shown + .online__label {
+  color: #ffffff;
+  transform: translateY(-100%);
+}
+
+.online__mess:not(:placeholder-shown) + .online__label {
+  transform: translateY(-100%);
+}
+
+.online__button {
+  color: var(--main-title-color);
+
+  transition: background-color 250ms linear;
+
+  &:hover,
+  &:focus {
+    @extend %button-active;
+  }
+}
+
+.contacts {
+  overflow: hidden;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  width: 100%;
+  height: 496px;
+  text-align: center;
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 449px;
+    text-align: start;
+  }
+  @include desktop {
+    padding-top: 130px;
+    padding-bottom: 130px;
+    padding-left: 100px;
+    width: calc(50% - 15px);
+    height: 100%;
+  }
+}
+
+.contacts__title {
+  color: var(--main-title-color);
+  margin-bottom: 40px;
+
+  font-family: "Raleway";
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+}
+
+.address {
+  font-style: normal;
+  margin-bottom: 44px;
+  @include tablet {
+    margin-bottom: 0;
+    width: 330px;
+  }
+  @include desktop {
+    margin-bottom: 70px;
+    width: 260px;
+  }
+}
+
+.address__wrap {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+  }
+}
+
+.address__item {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &::before {
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 16px;
+  }
+}
+
+.address__link {
+  color: var(--prices-color);
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.hours {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 30px;
+  }
+}
+
+.contacts__top-text {
+  color: var(--main-title-color);
+  margin-bottom: var(--typical-margin);
+
+  &::before {
+    background-color: rgba(157, 164, 189, 0.4);
+  }
+}
+
+.contacts__bottom-text {
+  text-align: start;
+}
+
+@include generateIcons($icons);

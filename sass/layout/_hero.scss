@@ -1,0 +1,126 @@
+.hero__container {
+  width: 100%;
+  padding: 0;
+
+  @include mobile {
+    display: flex;
+  }
+
+  @include tablet {
+    min-width: 720px;
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  @include desktop {
+    width: 1200px;
+  }
+}
+
+.hero__soc {
+  display: none;
+  @include tablet {
+    width: 115px;
+    display: flex;
+    align-items: flex-end;
+  }
+  @include desktop {
+    width: 90px;
+  }
+}
+
+.hero__list {
+  display: flex;
+  align-items: center;
+  transform: rotate(-90deg) translateY(50px) translateX(40px);
+  transform-origin: bottom left;
+
+  &::before {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: var(--secondary-title-color);
+    margin-right: 40px;
+  }
+}
+
+.hero__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.hero__content {
+  background-color: var(--secondary-title-color);
+  background-image: linear-gradient(
+      rgba(25, 28, 38, 0.2),
+      rgba(25, 28, 38, 0.2)
+    ),
+    url(../images/hero_bg_opt.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex-grow: 1;
+  padding: 208px 31px 183px;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 280px 157px 234px 70px;
+  }
+  @include desktop {
+    padding: 272px 452px 206px 96px;
+  }
+}
+
+.hero__link {
+  color: var(--secondary-title-color);
+  transition: color 250ms linear;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36px;
+  letter-spacing: 0.2em;
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.hero__top-text {
+  display: inline-flex;
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hero__title {
+  color: var(--main-title-color);
+  margin-bottom: var(--typical-margin);
+
+  font-family: "Raleway", sans-serif;
+  font-size: 48px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+  @include tablet {
+    display: block;
+  }
+  @include desktop {
+    font-size: 72px;
+    line-height: 1.18;
+  }
+}
+
+.hero__bottom-text {
+  font-size: 16px;
+  line-height: 1.62;
+  max-width: 306px;
+  display: inline-block;
+  @include tablet {
+    max-width: 349px;
+  }
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.67;
+    max-width: 400px;
+  }
+}

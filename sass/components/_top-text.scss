@@ -1,0 +1,21 @@
+.top-text {
+    display: flex;
+    align-items: center;
+
+    color: var(--secondary-text-color);
+    margin-bottom: var(--typical-margin);
+
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    &::before {
+        content: "";
+        width: 60px;
+        height: 1px;
+        background-color: currentColor;
+        margin-right: var(--typical-margin);
+    }
+}

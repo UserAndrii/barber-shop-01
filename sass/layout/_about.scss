@@ -1,0 +1,113 @@
+.about__container {
+    padding-top: 84px;
+    padding-bottom: 84px;
+
+    @include tablet {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: flex;
+    }
+    @include desktop {
+        padding-top: 140px;
+        padding-bottom: 120px;
+    }
+}
+
+.about__list {
+    display: none;
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    @include desktop {
+        flex-direction: row;
+    }
+}
+
+.about__item {
+    width: 330px;
+    height: 235px;
+    @include desktop {
+        width: 270px;
+        height: 445px;
+    }
+    
+    &:first-child {
+        @include tablet {
+            background: url(../images/img1_tablet.jpg);
+        }
+        @include desktop {
+            background: url(../images/img1_desk.jpg);
+        }
+    }
+    
+    &:last-child {
+        @include tablet {
+            background: url(../images/img2_tablet.jpg);
+        }
+        @include desktop {
+            background: url(../images/img2_desk.jpg);
+        }
+    }
+}
+
+.about__content {
+    overflow: hidden;
+    @include tablet {
+        margin-left: 30px;
+    }
+    @include desktop {
+        margin-left: 65px;
+    }
+    
+}
+
+.about__top-text {
+    color: var(--secondary-title-color);
+}
+
+.about__title {
+    color: var(--secondary-title-color);
+    margin-bottom: var(--typical-margin);
+
+    font-family: "Raleway", sans-serif;
+    font-size: 28px;
+    line-height: 1.18;
+    letter-spacing: 0.05em;
+
+    @include desktop {
+        font-size: 42px;
+        line-height: 1.17;
+    }
+}
+
+.about__bottom-text {
+    color: var(--primary-text-color);
+    margin-bottom: var(--typical-margin);
+    font-size: 16px;
+    line-height: 1.63;
+    @include desktop {
+        font-size: 18px;
+        line-height: 1.67;
+    }
+}
+
+.about__text {
+    color: var(--primary-text-color);
+    margin-bottom: 40px;
+
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: 0.02em;
+}
+
+.about__button {
+    color: var(--secondary-title-color);
+    transition: background-color 250ms linear, color 250ms linear;
+    
+    &:hover,
+    &:focus {
+        @extend %button-active;
+    }
+}
